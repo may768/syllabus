@@ -1,0 +1,213 @@
+:root{
+    --bg-main:#070707;
+    --bg-panel:#0c0c0c;
+    --bg-slot:#111111;
+    --border:#2a1a12;
+    --text-main:#f5f5f5;
+    --text-muted:#b0a090;
+    --heat-low:#fbbf24;
+    --heat-mid:#fb923c;
+    --heat-high:#ef4444;
+}
+
+*{ box-sizing:border-box; }
+
+body{
+    margin:0;
+    min-height:100vh;
+    background:
+        radial-gradient(circle at top right, rgba(255,120,0,0.14), transparent 45%),
+        radial-gradient(circle at bottom left, rgba(255,40,0,0.12), transparent 45%),
+        var(--bg-main);
+    font-family:"Inter","Segoe UI",sans-serif;
+    color:var(--text-main);
+}
+
+.wrapper{
+    max-width:1200px;
+    margin:auto;
+    padding:36px 20px 80px;
+}
+
+.header{
+    text-align:center;
+    margin-bottom:36px;
+}
+
+.header h1{
+    font-size:32px;
+    letter-spacing:2px;
+    background:linear-gradient(90deg,var(--heat-low),var(--heat-mid),var(--heat-high));
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.course{
+    background:linear-gradient(180deg,#0c0c0c,#080808);
+    border:1px solid var(--border);
+    border-radius:18px;
+    box-shadow:
+        inset 0 0 20px rgba(255,120,0,0.05),
+        0 22px 44px rgba(0,0,0,0.9);
+    overflow:hidden;
+}
+
+.course-header{
+    padding:22px 26px;
+    border-bottom:1px solid var(--border);
+}
+
+.course-title{
+    font-size:22px;
+    color:var(--heat-mid);
+    font-weight:600;
+}
+
+.course-code{
+    font-size:13px;
+    color:var(--text-muted);
+    margin-top:6px;
+}
+
+.unit{
+    padding:20px 26px;
+    border-top:1px solid var(--border);
+}
+
+.unit h3{
+    margin:0 0 12px;
+    font-size:17px;
+    color:var(--heat-low);
+}
+
+.unit ul{
+    margin:0;
+    padding-left:20px;
+}
+
+.unit li{
+    font-size:14px;
+    line-height:1.6;
+    margin-bottom:6px;
+}
+
+.block{
+    padding:18px 26px;
+    border-top:1px solid var(--border);
+    background:linear-gradient(135deg,rgba(255,120,0,0.15),rgba(255,40,0,0.25));
+}
+
+.block h4{
+    margin:0 0 10px;
+    color:#fde047;
+}
+
+.block ol{
+    margin:0;
+    padding-left:20px;
+}
+/* ===== HOME PAGE SUBJECT BOXES ===== */
+
+.subject-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:28px;
+    margin-top:40px;
+}
+
+.subject-box{
+    position:relative;
+    padding:28px 26px 30px;
+    background:
+        linear-gradient(180deg,#0e0e0e,#080808);
+    border:1px solid var(--border);
+    border-radius:20px;
+    text-decoration:none;
+    color:var(--text-main);
+    box-shadow:
+        inset 0 0 24px rgba(255,120,0,0.06),
+        0 18px 40px rgba(0,0,0,0.85);
+    transition:all 0.35s ease;
+    overflow:hidden;
+}
+
+.subject-box::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+        radial-gradient(circle at top right,
+        rgba(255,140,0,0.22),transparent 55%);
+    opacity:0;
+    transition:opacity 0.35s ease;
+}
+
+.subject-box:hover::before{
+    opacity:1;
+}
+
+.subject-box:hover{
+    transform:translateY(-10px) scale(1.015);
+    box-shadow:
+        inset 0 0 30px rgba(255,120,0,0.12),
+        0 30px 60px rgba(0,0,0,0.95);
+}
+
+.subject-title{
+    font-size:20px;
+    font-weight:600;
+    color:var(--heat-mid);
+    margin-bottom:10px;
+}
+
+.subject-code{
+    font-size:13px;
+    color:var(--text-muted);
+    margin-bottom:16px;
+}
+
+.subject-desc{
+    font-size:14px;
+    line-height:1.6;
+    color:#e6e6e6;
+}
+
+.subject-tag{
+    position:absolute;
+    bottom:16px;
+    right:20px;
+    font-size:11px;
+    padding:6px 12px;
+    border-radius:20px;
+    background:rgba(255,120,0,0.18);
+    color:#fde68a;
+    border:1px solid rgba(255,160,0,0.3);
+}
+.sem-title{
+    text-align:center;
+    margin-bottom:14px;
+    color:var(--heat-mid);
+    letter-spacing:1px;
+}
+
+.sem-subtitle{
+    text-align:center;
+    font-size:13px;
+    color:var(--text-muted);
+    margin-bottom:36px;
+}
+
+.subject-tag.lab{
+    background:rgba(239,68,68,0.25);
+    border-color:rgba(239,68,68,0.4);
+}
+.subject-box .subject-desc {
+    font-size: 0.85rem; /* smaller so it fits neatly */
+    line-height: 1.3;
+    color: #555;
+}
+
+.subject-box .subject-tag {
+    font-size: 0.8rem;
+    padding: 4px 8px;
+}
